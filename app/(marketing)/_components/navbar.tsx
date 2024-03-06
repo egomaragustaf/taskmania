@@ -9,10 +9,10 @@ export const Navbar = () => {
         <Logo />
         <div className="space-x-4 md:block md:w-auto flex items-center justify-between w-full">
           <Button size="sm" variant="outline" asChild>
-            <Link href="/signin">Login</Link>
+            <Link href="/sign-in">Login</Link>
           </Button>
           <Button size="sm" asChild>
-            <Link href="/signup">Taskmania for Free</Link>
+            <Link href="/sign-up">Taskmania for Free</Link>
           </Button>
         </div>
       </div>

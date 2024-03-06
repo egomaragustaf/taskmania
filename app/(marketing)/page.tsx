@@ -42,7 +42,7 @@ const MarketingPage = () => {
         accomplish it all with Taskmania.
       </div>
       <Button className="mt-6" size="lg" asChild>
-        <Link href="/signup">Get Taskmania for Free!</Link>
+        <Link href="/sign-up">Get Taskmania for Free!</Link>
       </Button>
     </div>
   );
