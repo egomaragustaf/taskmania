@@ -15,7 +15,7 @@ interface HintProps {
 export const Hint = ({
   children,
   description,
-  side,
+  side = "bottom",
   sideOffset,
 }: HintProps) => {
   return (
