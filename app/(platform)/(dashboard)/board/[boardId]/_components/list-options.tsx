@@ -1,5 +1,6 @@
 "use client";
 
+import { ElementRef, useRef } from "react";
 import { List } from "@prisma/client";
 
 import { useAction } from "@/hooks/use-action";
@@ -22,9 +23,12 @@ interface ListOptionsProps {
 }
 
 export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
+  const closeRef = useRef<ElementRef<"button">>(null);
+
   const { execute: executeDelete } = useAction(deleteList, {
     onSuccess: (data) => {
       toast.success(`List "${data.title}" deleted!`);
+      closeRef.current?.click();
     },
     onError: (error) => {
       toast.error(error);
@@ -49,7 +53,7 @@ export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
         <div className="text-sm font-medium text-center text-neutral-600 pb-4">
           List Actions
         </div>
-        <PopoverClose asChild>
+        <PopoverClose ref={closeRef} asChild>
           <Button
             className="h-auto w-auto p-2 absolute top-2 right-2 text-neutral-600"
             variant="ghost">
